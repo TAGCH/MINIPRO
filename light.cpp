@@ -20,7 +20,7 @@ bool IsAutoG = 0,IsAutoY=0,IsAutoR = 0;
 bool IsOnG = 0, IsOnY = 0,IsOnR=0;
 Bounce debouncer = Bounce();
 
-const String baseUrl = "https://exceed-hardware-stamp465.koyeb.app";
+const String baseUrl = "http://group15.exceed19.online";
 
 void Connect_Wifi() {
     WiFi.begin(ssid, password);
@@ -48,7 +48,7 @@ void GET_post(){
         String payload = http.getString();
         deserializeJson(doc,payload);
 
-        IsParty = ((int)doc["IsParty"]);
+        IsParty = ((int)doc["party"]);
     }
     else {
         Serial.print("Error code: ");
